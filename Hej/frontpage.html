@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Hej!</title>
+  <meta name="comp1800 boilerplate code" content="my bcit project">
+  <meta name="author" content="BCIT">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap, firebase-auth-ui -->
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+
+  <!-- Bootstrap FirebaseUI CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+  <!-- Firebase 8 CDNs-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+  </script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.6.0/dist/chart.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+
+
+  <!-- Link to the api keys for your firebase project -->
+  <script src="scripts/firebaseAPI.js"></script>
+
+  <!-- Optional styles and scripts of your own -->
+  <!-- Google Icons (Material Design)-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="styles/my_style.css">
+  <link rel="stylesheet" href="styles/frontpage.css">
+
+
+
+</head>
+
+<style>
+
+</style>
+
+<body>
+
+  <!-------------------------------------->
+  <!-- The following is HTML for layout -->
+  <!-------------------------------------->
+  <!-- Header Navigation Bar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="./frontpage.html">HE J!</a>
+    </div>
+  </nav>
+
+  <!-- welcome and main part of the page -->
+  <div class="jumbotron jumbotron-fluid my-2">
+    <div class="container">
+      <h1 class="display-4">Welcome <span id="name-goes-here"></span> </h1>
+    </div>
+  </div>
+
+
+  <div class="text-center py-2 px-2 mx-2">
+    <h2>You've completed <span class="navbar-brand" id="counter"></span>reminders with <span class="navbar-brand">HE
+        J!</span></h2>
+    <a href="#"></a>
+  </div>
+
+  <!-- Templates for general use, not displayed -->
+  <template id="CardTemplate">
+    <tr>
+      <td class="card-title"></td>
+      <td class="card-freq"></td>
+    </tr>
+    <h2 class="card-isEmpty"></h2>
+  </template>
+
+  <!-- Here is container for cards  -->
+  <div class="mx-2 px-2 my-2" id="reminderContainer">
+    <h1>Active Schedules</h1>
+    <div>
+      <table>
+        <tr>
+          <th>Reminders</th>
+          <th>Frequency</th>
+        </tr>
+      </table>
+      <table id="reminders-go-here">
+      </table>
+    </div>
+    <div id="isEmpty-go-here"></div>
+  </div>
+
+  <div id="quote" class="mx-2">
+    <div class="col">
+      <h1>Quote of the Day:</h1>
+      <div>
+        <div id="quote-goes-here"></div>
+        <div id="author-goes-here"></div>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding-top: 60px;"></div>
+
+  <div class="fixed-bottom">
+    <footer class="navbar-bottom ">
+
+      <a id="first-icon" href="calendar.html" class="bi bi-calendar-date"></a>
+      <a id="second-icon" href="create_schedule.html" class="bi bi-plus-circle"></a>
+      <a id="third-icon" href="profile_user.html" class="bi bi-person"></a>
+
+
+    </footer>
+
+  </div>
+
+  <!--------------------------------------------------------------------->
+  <!-- JS files: Your own JavaScript functions included here    -->
+  <!--------------------------------------------------------------------->
+  <script src="scripts/frontpage.js"></script>
+  <script>
+    displayRems();
+    insertNameAndCounter();
+    addQuote();
+  </script>
+</body>
+
+</html>
